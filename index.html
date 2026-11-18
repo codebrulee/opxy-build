@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codebrulee's Open-XY build</title>
+<meta name="description" content="A personal Open-XY build for the OP-XY, with features proposed to Open-XY.">
+<style>
+:root{--bg:#f6f5f2;--fg:#1d1d1b;--muted:#6b6a65;--line:#dcdad3;--card:#fff;--accent:#c2410c;--warn-bg:#fff4e5;--warn-line:#f0b46a}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#151514;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;--card:#1e1e1c;--accent:#fb923c;--warn-bg:#2a1f12;--warn-line:#7a4b16}}
+:root[data-theme=dark]{--bg:#151514;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;--card:#1e1e1c;--accent:#fb923c;--warn-bg:#2a1f12;--warn-line:#7a4b16}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:52rem;margin:0 auto;padding:2.5rem 16px 4rem}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .4rem}
+h2{font-size:1.2rem;margin:2.4rem 0 .6rem}
+p,li{max-width:44rem}
+a{color:var(--accent)}
+.lede{color:var(--muted);font-size:1.05rem;margin:0 0 1.5rem}
+.notice{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:8px;padding:.9rem 1rem;margin:1.2rem 0}
+.notice p{margin:.3rem 0}
+.open{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:.75rem 1.2rem;border-radius:8px;margin:.5rem 0 0}
+:root[data-theme=dark] .open,:root:not([data-theme=light]) .open{color:#fff}
+ul{padding-left:1.2rem}
+li{margin:.35rem 0}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:.45rem .7rem;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+.tag{color:var(--muted);font-size:.8rem}
+footer{color:var(--muted);font-size:.85rem;margin-top:3rem;border-top:1px solid var(--line);padding-top:1rem}
+code{font-size:.9em}
+</style>
+</head>
+<body>
+<main>
+<h1>Codebrulee's Open-XY build</h1>
+<p class="lede">A personal build of <a href="https://github.com/etcetc000/open-xy">Open-XY</a> for the OP-XY: the machines I use, plus features I've written and offered to Open-XY.</p>
+
+<div class="notice">
+<p><strong>Not an official Open-XY release.</strong> For the official builder and its support, go to <a href="https://github.com/etcetc000/open-xy">Open-XY</a>. Please report problems with this build <a href="https://github.com/codebrulee/open-xy/issues">here</a>, not to Open-XY.</p>
+<p><strong>Modified firmware carries a risk of bricking your OP-XY.</strong> You need your own stock OS 1.2.1 <code>os.ldr</code>; this page never hosts or downloads Teenage Engineering firmware. Back up your projects first.</p>
+</div>
+
+<a class="open" href="opxy-builder.html">Open the builder</a>
+
+<h2>What's different from Open-XY</h2>
+<ul>
+<li><strong>FX III</strong>: a third send effect on Aux 5, with its own controls and shift row.</li>
+<li><strong>Performance recorder</strong>: records a performance into the song, with punch-ins, overdub and the Record + Arrange arm. Built on new extension events (scene boundaries, scene select, track mute, arrangement actions).</li>
+<li><strong>CPU meter and warning</strong>: Project &gt; M4 &gt; cpu shows the DSP load, and when audio drops a red cpu chip names the heaviest part (track 1–8, Aux 5, tape, FX I, FX II or master).</li>
+<li><strong>Xyphemera effects</strong>: Earthshine (shimmer reverb) and Earthgrain (granular).</li>
+</ul>
+<p>Built from <a href="https://github.com/codebrulee/open-xy/tree/BUILD_BRANCH">codebrulee/open-xy@BUILD_BRANCH</a>, which is Open-XY staging (SDK 1.16, 2026-11-15) with these changes on top. I'd like them to land in Open-XY itself; where a pull request exists it's linked from the source branch.</p>
+
+<h2>Machines and extensions</h2>
+<p>Every machine belongs to its author and is used under its licence. The versions are the ones pinned in Open-XY's catalog.</p>
+<div class="wrap"><table>
+<thead><tr><th>Machine</th><th>Kind</th><th>Author</th><th>Source</th><th>Licence</th></tr></thead>
+<tbody>
+<tr><td>mdkit</td><td>drum</td><td>OP-XY MNMD contributors</td><td><a href="https://github.com/mmockett/OP-XY-MNMD">mmockett/OP-XY-MNMD</a> <span class="tag">v1.3.6</span></td><td>MIT</td></tr>
+<tr><td>chroma</td><td>effect</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-ModFX">mmockett/OP-XY-ModFX</a> <span class="tag">v1.9.2</span></td><td>MIT</td></tr>
+<tr><td>earthgrain</td><td>effect</td><td>Codebrulee</td><td><a href="https://github.com/codebrulee/xyphemera">codebrulee/xyphemera</a> <span class="tag">ce86276</span></td><td>MIT</td></tr>
+<tr><td>earthshine</td><td>effect</td><td>Codebrulee</td><td><a href="https://github.com/codebrulee/xyphemera">codebrulee/xyphemera</a> <span class="tag">ce86276</span></td><td>MIT</td></tr>
+<tr><td>gentape</td><td>effect</td><td>Open-XY contributors</td><td><a href="https://github.com/kristapskristaps/xy-machines">kristapskristaps/xy-machines</a> <span class="tag">gentape-v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>pingpong</td><td>effect</td><td>Open-XY contributors</td><td><a href="https://github.com/etcetc000/open-xy-core-machines">etcetc000/open-xy-core-machines</a> <span class="tag">v1.1.0</span></td><td>MIT</td></tr>
+<tr><td>ringmod</td><td>effect</td><td>Open-XY contributors</td><td><a href="https://github.com/etcetc000/open-xy-core-machines">etcetc000/open-xy-core-machines</a> <span class="tag">v1.1.0</span></td><td>MIT</td></tr>
+<tr><td>capture</td><td>extension</td><td>Open-XY contributors</td><td><a href="https://github.com/etcetc000/open-xy-core-machines">etcetc000/open-xy-core-machines</a> <span class="tag">v1.6.1</span></td><td>MIT</td></tr>
+<tr><td>cpu-warning</td><td>extension</td><td>Codebrulee</td><td><a href="https://github.com/codebrulee/opxy-cpu-warning">codebrulee/opxy-cpu-warning</a> <span class="tag">e0116de</span></td><td>MIT</td></tr>
+<tr><td>drumline_page</td><td>extension</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Extensions">mmockett/OP-XY-Extensions</a> <span class="tag">v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>master_dj_filter</td><td>extension</td><td>Open-XY contributors</td><td><a href="https://github.com/V714/open-xy-dj-filter">V714/open-xy-dj-filter</a> <span class="tag">v1.1.5</span></td><td>MIT</td></tr>
+<tr><td>performance-recorder</td><td>extension</td><td>Codebrulee</td><td><a href="https://github.com/codebrulee/opxy-performance-recorder">codebrulee/opxy-performance-recorder</a> <span class="tag">7f17dc7</span></td><td>MIT</td></tr>
+<tr><td>chords</td><td>player</td><td>Open-XY contributors</td><td><a href="https://github.com/etcetc000/open-xy-core-machines">etcetc000/open-xy-core-machines</a> <span class="tag">v1.9.1</span></td><td>MIT</td></tr>
+<tr><td>timestretch</td><td>sample</td><td>Open-XY contributors</td><td><a href="https://github.com/etcetc000/open-xy-core-machines">etcetc000/open-xy-core-machines</a> <span class="tag">v1.7.0-rc.1</span></td><td>MIT</td></tr>
+<tr><td>achird</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/frankoooooooo/cassiopeia">frankoooooooo/cassiopeia</a> <span class="tag">v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>acidrain</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/frankoooooooo/acid-rain">frankoooooooo/acid-rain</a> <span class="tag">v1.0.1</span></td><td>MIT</td></tr>
+<tr><td>bend</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Hexagon">mmockett/OP-XY-Hexagon</a> <span class="tag">v1.8.0</span></td><td>MIT</td></tr>
+<tr><td>breadboard</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/meemknight/OPXY-breadboard">meemknight/OPXY-breadboard</a> <span class="tag">v1.1.0</span></td><td>MIT</td></tr>
+<tr><td>caph</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/frankoooooooo/cassiopeia">frankoooooooo/cassiopeia</a> <span class="tag">v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>cocoa</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Nonagon">mmockett/OP-XY-Nonagon</a> <span class="tag">v0.10.0</span></td><td>MIT</td></tr>
+<tr><td>coin</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Nonagon">mmockett/OP-XY-Nonagon</a> <span class="tag">v0.9.2</span></td><td>MIT</td></tr>
+<tr><td>daath</td><td>synth</td><td>SammiBabe666</td><td><a href="https://github.com/SammiBabe666/Daath-OP-XY-WitchHouse-engine">SammiBabe666/Daath-OP-XY-WitchHouse-engine</a> <span class="tag">1.0</span></td><td>MIT</td></tr>
+<tr><td>drone</td><td>synth</td><td>Gokux</td><td><a href="https://github.com/Gokux/opxy-machines">Gokux/opxy-machines</a> <span class="tag">v1.1.6</span></td><td>MIT</td></tr>
+<tr><td>fermi</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Nonagon">mmockett/OP-XY-Nonagon</a> <span class="tag">v0.10.0</span></td><td>MIT</td></tr>
+<tr><td>fm2op</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/etcetc000/open-xy-core-machines">etcetc000/open-xy-core-machines</a> <span class="tag">v1.1.0</span></td><td>MIT</td></tr>
+<tr><td>halcyon</td><td>synth</td><td>Colors In Space</td><td><a href="https://github.com/colorsinspace1/halcyon">colorsinspace1/halcyon</a> <span class="tag">1.3</span></td><td>MIT</td></tr>
+<tr><td>hollow</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Hexagon">mmockett/OP-XY-Hexagon</a> <span class="tag">v1.8.0</span></td><td>MIT</td></tr>
+<tr><td>karplus</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/etcetc000/open-xy-core-machines">etcetc000/open-xy-core-machines</a> <span class="tag">v1.10.0</span></td><td>MIT</td></tr>
+<tr><td>matrixy</td><td>synth</td><td>frankoooooooo</td><td><a href="https://github.com/frankoooooooo/matrixy">frankoooooooo/matrixy</a> <span class="tag">v1.0.2</span></td><td>MIT</td></tr>
+<tr><td>mmpar</td><td>synth</td><td>OP-XY MNMD contributors</td><td><a href="https://github.com/mmockett/OP-XY-MNMD">mmockett/OP-XY-MNMD</a> <span class="tag">v1.3.5</span></td><td>MIT</td></tr>
+<tr><td>mmsid</td><td>synth</td><td>OP-XY MNMD contributors</td><td><a href="https://github.com/mmockett/OP-XY-MNMD">mmockett/OP-XY-MNMD</a> <span class="tag">v1.3.5</span></td><td>MIT</td></tr>
+<tr><td>mmvo6</td><td>synth</td><td>OP-XY MNMD contributors</td><td><a href="https://github.com/mmockett/OP-XY-MNMD">mmockett/OP-XY-MNMD</a> <span class="tag">v1.3.0</span></td><td>MIT</td></tr>
+<tr><td>moth</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Hexagon">mmockett/OP-XY-Hexagon</a> <span class="tag">v1.7.3</span></td><td>MIT</td></tr>
+<tr><td>navi</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/frankoooooooo/cassiopeia">frankoooooooo/cassiopeia</a> <span class="tag">v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>nexus</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Nexus">mmockett/OP-XY-Nexus</a> <span class="tag">v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>nightdrive</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/V714/open-xy-nightdrive">V714/open-xy-nightdrive</a> <span class="tag">v1.0.3</span></td><td>MIT</td></tr>
+<tr><td>omnifilter</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-ModFX">mmockett/OP-XY-ModFX</a> <span class="tag">v1.9.2</span></td><td>MIT</td></tr>
+<tr><td>orbit</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Hexagon">mmockett/OP-XY-Hexagon</a> <span class="tag">v1.7.2</span></td><td>MIT</td></tr>
+<tr><td>papasrapa</td><td>synth</td><td>Gokux</td><td><a href="https://github.com/Gokux/opxy-machines">Gokux/opxy-machines</a> <span class="tag">v1.1.6</span></td><td>MIT</td></tr>
+<tr><td>reaction</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/frankoooooooo/reaction">frankoooooooo/reaction</a> <span class="tag">v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>ruchbah</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/frankoooooooo/cassiopeia">frankoooooooo/cassiopeia</a> <span class="tag">v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>schedar</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/frankoooooooo/cassiopeia">frankoooooooo/cassiopeia</a> <span class="tag">v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>segin</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/frankoooooooo/cassiopeia">frankoooooooo/cassiopeia</a> <span class="tag">v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>sift</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/kristapskristaps/xy-machines">kristapskristaps/xy-machines</a> <span class="tag">collection-v1.0.0</span></td><td>MIT</td></tr>
+<tr><td>tattva</td><td>synth</td><td>Colors In Space</td><td><a href="https://github.com/colorsinspace1/tattva">colorsinspace1/tattva</a> <span class="tag">1.02</span></td><td>MIT</td></tr>
+<tr><td>vader</td><td>synth</td><td>Open-XY contributors</td><td><a href="https://github.com/kristapskristaps/xy-machines">kristapskristaps/xy-machines</a> <span class="tag">vader-v1.1.0</span></td><td>MIT</td></tr>
+<tr><td>wander</td><td>synth</td><td>Colors In Space</td><td><a href="https://github.com/colorsinspace1/wander">colorsinspace1/wander</a> <span class="tag">1.0</span></td><td>MIT</td></tr>
+<tr><td>wane</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Hexagon">mmockett/OP-XY-Hexagon</a> <span class="tag">v1.8.0</span></td><td>MIT</td></tr>
+</tbody></table></div>
+
+<footer>
+<p>Open-XY is MIT licensed, © Open-XY contributors. OP-XY is a product of Teenage Engineering; this project is not affiliated with or endorsed by Teenage Engineering.</p>
+<p>Build KIT_ID · source BUILD_COMMIT</p>
+</footer>
+</main>
+</body>
+</html>
