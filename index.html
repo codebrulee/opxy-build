@@ -77,12 +77,10 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <div>
 <p class="kicker">Mixing</p>
 <h2>FX III: a third send effect</h2>
-<p>The OP-XY gives you two send effects. FX III turns Aux 5 into a third, so a reverb, a delay and something stranger can all run at once.</p>
+<p>FX III turns Aux 5 into a third send, so a reverb, a delay and something stranger can all run at once.</p>
 <ul>
-<li>Turn Aux 5's Input to its top detent, <em>send</em>, and every track's aux send feeds it.</li>
-<li>Shift + Aux 5's key picks the effect: any of stock's send effects, or any in the build, Earthshine and Earthgrain included.</li>
-<li>It gets the effect's own page, all eight controls and its Shift row, just as FX I and FX II do. Press encoder 1 to bypass it.</li>
-<li>Aux 5's Level and Mix set the return, and everything is saved with the project.</li>
+<li>Set Aux 5's Input to <em>send</em>; every track's aux send feeds it.</li>
+<li>Shift + Aux 5's key picks any send effect in the build, with its own page and Shift row.</li>
 </ul>
 <p class="links">Source: <a href="https://github.com/codebrulee/open-xy/tree/build/2026.11.18">codebrulee/open-xy</a></p>
 </div>
@@ -92,12 +90,10 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <div>
 <p class="kicker">Performance <span class="badge">experimental</span></p>
 <h2>Performance recorder</h2>
-<p>Play your project live and keep the take. The recorder turns a performance into a song you can play back, edit and build on.</p>
+<p>Play your project live and keep the take as a song.</p>
 <ul>
-<li>Hold Record and press Arrange, then press Play.</li>
-<li>Switch scenes, mute and unmute tracks and play punch-in effects: it writes them all into a new song as you go.</li>
-<li>From the song page, press Arrange again to overdub a song you've already recorded.</li>
-<li>Didn't like it? Shift + Stop on the arranger or song page undoes the last take.</li>
+<li>Hold Record, press Arrange, then Play. Scene changes, mutes and punch-ins are written as you go.</li>
+<li>Press Arrange again on the song page to overdub; Shift + Stop undoes a take.</li>
 </ul>
 <p class="links">Source: <a href="https://github.com/codebrulee/opxy-performance-recorder">codebrulee/opxy-performance-recorder</a></p>
 </div>
@@ -107,11 +103,10 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <div>
 <p class="kicker">Confidence</p>
 <h2>CPU meter and warning</h2>
-<p>Machines are hungry, and a click in the audio rarely says which one caused it. This build tells you.</p>
+<p>When the audio clicks, find out which track caused it.</p>
 <ul>
-<li><strong>Project &gt; M4 &gt; cpu</strong> shows how hard the DSP is working, its peak, and which part caused the slowest moment.</li>
-<li>When audio actually drops, a red cpu chip appears where a muted track's M would be, naming the culprit: track 1–8, Aux 5, tape, FX I, FX II or master. So you know what to lighten without opening a menu.</li>
-<li>A slow moment that still made it in time stays quiet: the warning only shows for real dropouts.</li>
+<li>Project &gt; M4 &gt; cpu shows the load, its peak and what caused it.</li>
+<li>On a dropout, a red cpu chip names the culprit: track 1–8, Aux 5, tape, FX I, FX II or master.</li>
 </ul>
 <p class="links">Source: <a href="https://github.com/codebrulee/open-xy/tree/build/2026.11.18">codebrulee/open-xy</a> · <a href="https://github.com/codebrulee/opxy-cpu-warning">codebrulee/opxy-cpu-warning</a></p>
 </div>
@@ -122,11 +117,7 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <p class="kicker">Effect · Xyphemera</p>
 <h2>Earthshine</h2>
 <p>A take on a bipolar shimmer verb, with a UI that takes the perspective of exploring the musical and emotional impact of light touching the earth.</p>
-<p>A warm, wide tank whose tail is pitch-shifted back into itself. The <strong>sub</strong> layer sits an interval under the notes (an octave by default); the <strong>up</strong> layer climbs above them, an octave at a time or as a halo that rises or falls for ever. Light turns from the moon (all sub) to the sun (all up); Shimmer sets how much of either.</p>
-<ul>
-<li>Decay from 1 to 20 seconds and Tone from dark to bright.</li>
-<li>On Shift: hold the shimmer back, swell it in after each note, and choose the intervals.</li>
-</ul>
+<p>Light turns from the moon (a sub layer under the notes) to the sun (a layer climbing above them); Shimmer sets how much of either.</p>
 <p class="links">Source: <a href="https://github.com/codebrulee/xyphemera/tree/main/earthshine">codebrulee/xyphemera/earthshine</a></p>
 </div>
 <figure><img src="images/earthshine.png" alt="Earthshine's screen: the Earth inside a dial from the moon to the sun" width="960" height="440"><figcaption>Earthshine at its defaults.</figcaption></figure>
@@ -136,17 +127,14 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <div>
 <p class="kicker">Effect · Xyphemera</p>
 <h2>Earthgrain</h2>
-<p>A granular looper send effect for the OP-XY. It records what it hears and plays it back as grains, in four modes: Weather, Satellite, Orbit and Plates. When you stop playing it holds the last phrase and keeps reading it, so it can drone on its own. Play into it again and the phrase lets go.</p>
+<p>A granular looper in four modes. When you stop playing it holds the last phrase as a drone; play into it again and the phrase lets go.</p>
 <div class="modes">
-<figure><img src="images/earthgrain-weather.png" alt="Earthgrain's Weather screen" width="960" height="440"><figcaption><strong>Weather:</strong> random grains from the last moments of the recording, or from anywhere in a held phrase: a cloud of them. Each grain is represented as a pressure system on the screen; the isobars are its contours, flashing while it sounds.</figcaption></figure>
-<figure><img src="images/earthgrain-satellite.png" alt="Earthgrain's Satellite screen" width="960" height="440"><figcaption><strong>Satellite:</strong> a play point moves through the recording, with grains laid evenly along it, so the sound slows down without changing pitch. When you play a new note it jumps to it. On the screen the Earth's turn is the recording's time, and four satellites, one for each grain voice, orbit it.</figcaption></figure>
-<figure><img src="images/earthgrain-orbit.png" alt="Earthgrain's Orbit screen" width="960" height="440"><figcaption><strong>Orbit:</strong> grains with spacing that widens and narrows over each cycle, like a spring. On the screen the moon's distance from the Earth is the gap between grains, and each grain leaves a mark on its orbit.</figcaption></figure>
-<figure><img src="images/earthgrain-plates.png" alt="Earthgrain's Plates screen" width="960" height="440"><figcaption><strong>Plates:</strong> the phrase cuts where its notes and hits begin, each then played one after another. On the screen the globe is split into sixteen plates, and each piece lifts as it plays.</figcaption></figure>
+<figure><img src="images/earthgrain-weather.png" alt="Earthgrain's Weather screen" width="960" height="440"><figcaption><strong>Weather:</strong> random grains from the last moments of the recording: a cloud of them.</figcaption></figure>
+<figure><img src="images/earthgrain-satellite.png" alt="Earthgrain's Satellite screen" width="960" height="440"><figcaption><strong>Satellite:</strong> a play point moves through the recording, so the sound slows down without changing pitch.</figcaption></figure>
+<figure><img src="images/earthgrain-orbit.png" alt="Earthgrain's Orbit screen" width="960" height="440"><figcaption><strong>Orbit:</strong> grains with spacing that widens and narrows over each cycle, like a spring.</figcaption></figure>
+<figure><img src="images/earthgrain-plates.png" alt="Earthgrain's Plates screen" width="960" height="440"><figcaption><strong>Plates:</strong> the phrase cuts where its notes and hits begin, each then played one after another.</figcaption></figure>
 </div>
-<ul>
-<li>Pitch sets from unison to fifths, octaves, reverse and harmonics; Repeats to let the loop evolve; Space to put it in a room.</li>
-<li>Lock it to the song's tempo, and choose how long a held phrase lasts.</li>
-</ul>
+
 <p class="links">Source: <a href="https://github.com/codebrulee/xyphemera/tree/main/earthgrain">codebrulee/xyphemera/earthgrain</a></p>
 </div>
 </section>
