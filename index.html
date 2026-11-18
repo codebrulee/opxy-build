@@ -46,6 +46,9 @@ code{font-size:.9em}
 figure{margin:0}
 figure img{width:100%;height:auto;display:block;background:#000}
 figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
+.modes{display:grid;grid-template-columns:1fr;gap:1.4rem;margin:1.4rem 0}
+@media (min-width:640px){.modes{grid-template-columns:1fr 1fr}}
+.modes figcaption{font-size:.88rem;color:var(--fg);margin-top:.5rem}
 .grid4{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
 .grid4 figcaption{margin:.2rem 0 0}
 .badge{display:inline-block;font-size:.72rem;font-weight:600;border:1px solid var(--warn-line);background:var(--warn-bg);border-radius:99px;padding:.05rem .5rem;margin-left:.4rem;vertical-align:middle;text-transform:none;letter-spacing:0;color:var(--fg)}
@@ -115,37 +118,34 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <div>
 <p class="kicker">Effect · Xyphemera</p>
 <h2>Earthshine</h2>
-<p>A shimmer reverb: a warm, wide tank whose tail is pitch-shifted back into itself. Turn <strong>Light</strong> from the moon to the sun, from a sub-octave bloom under your notes to an octave climbing above them, or to a halo that rises or falls for ever.</p>
+<p>A take on a bipolar shimmer verb, with a UI that takes the perspective of exploring the musical and emotional impact of light touching the earth.</p>
+<p>A warm, wide tank whose tail is pitch-shifted back into itself. The <strong>sub</strong> layer sits an interval under the notes (an octave by default); the <strong>up</strong> layer climbs above them, an octave at a time or as a halo that rises or falls for ever. Light turns from the moon (all sub) to the sun (all up); Shimmer sets how much of either.</p>
 <ul>
-<li>Decay from 1 to 20 seconds, Tone from dark to bright, and Shimmer for how much of either layer.</li>
+<li>Decay from 1 to 20 seconds and Tone from dark to bright.</li>
 <li>On Shift: hold the shimmer back, swell it in after each note, and choose the intervals.</li>
-<li>The screen is the Earth with the light turning across it.</li>
 </ul>
 <p class="links">Source: <a href="https://github.com/codebrulee/xyphemera/tree/main/earthshine">codebrulee/xyphemera/earthshine</a></p>
 </div>
 <figure><img src="images/earthshine.png" alt="Earthshine's screen: the Earth inside a dial from the moon to the sun" width="960" height="440"><figcaption>Earthshine at its defaults.</figcaption></figure>
 </section>
 
-<section class="feature img flip">
+<section class="feature">
 <div>
 <p class="kicker">Effect · Xyphemera</p>
 <h2>Earthgrain</h2>
-<p>A granular looper that listens. It records what you play and plays it back as grains, and when you stop it holds your last phrase as a drone. Play again and the drone lets go.</p>
+<p>A granular looper send effect for the OP-XY. It records what it hears and plays it back as grains, in four modes: Weather, Satellite, Orbit and Plates. When you stop playing it holds the last phrase and keeps reading it, so it can drone on its own. Play into it again and the phrase lets go.</p>
+<div class="modes">
+<figure><img src="images/earthgrain-weather.png" alt="Earthgrain's Weather screen" width="960" height="440"><figcaption><strong>Weather:</strong> random grains from the last moments of the recording, or from anywhere in a held phrase: a cloud of them. Each grain is represented as a pressure system on the screen; the isobars are its contours, flashing while it sounds.</figcaption></figure>
+<figure><img src="images/earthgrain-satellite.png" alt="Earthgrain's Satellite screen" width="960" height="440"><figcaption><strong>Satellite:</strong> a play point moves through the recording, with grains laid evenly along it, so the sound slows down without changing pitch. When you play a new note it jumps to it. On the screen the Earth's turn is the recording's time, and four satellites, one for each grain voice, orbit it.</figcaption></figure>
+<figure><img src="images/earthgrain-orbit.png" alt="Earthgrain's Orbit screen" width="960" height="440"><figcaption><strong>Orbit:</strong> grains with spacing that widens and narrows over each cycle, like a spring. On the screen the moon's distance from the Earth is the gap between grains, and each grain leaves a mark on its orbit.</figcaption></figure>
+<figure><img src="images/earthgrain-plates.png" alt="Earthgrain's Plates screen" width="960" height="440"><figcaption><strong>Plates:</strong> the phrase cuts where its notes and hits begin, each then played one after another. On the screen the globe is split into sixteen plates, and each piece lifts as it plays.</figcaption></figure>
+</div>
 <ul>
-<li><strong>Weather</strong> scatters grains like a cloud, <strong>Satellite</strong> slows the sound without changing its pitch, <strong>Orbit</strong> spreads and gathers its grains like a spring, and <strong>Plates</strong> cuts your phrase at each note and plays the pieces back.</li>
 <li>Pitch sets from unison to fifths, octaves, reverse and harmonics; Repeats to let the loop evolve; Space to put it in a room.</li>
 <li>Lock it to the song's tempo, and choose how long a held phrase lasts.</li>
 </ul>
 <p class="links">Source: <a href="https://github.com/codebrulee/xyphemera/tree/main/earthgrain">codebrulee/xyphemera/earthgrain</a></p>
 </div>
-<figure>
-<div class="grid4">
-<div><img src="images/earthgrain-weather.png" alt="Earthgrain's Weather screen" width="960" height="440"><figcaption>Weather</figcaption></div>
-<div><img src="images/earthgrain-satellite.png" alt="Earthgrain's Satellite screen" width="960" height="440"><figcaption>Satellite</figcaption></div>
-<div><img src="images/earthgrain-orbit.png" alt="Earthgrain's Orbit screen" width="960" height="440"><figcaption>Orbit</figcaption></div>
-<div><img src="images/earthgrain-plates.png" alt="Earthgrain's Plates screen" width="960" height="440"><figcaption>Plates</figcaption></div>
-</div>
-</figure>
 </section>
 
 <h2>Getting it on your OP-XY</h2>
