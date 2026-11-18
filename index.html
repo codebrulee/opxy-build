@@ -77,10 +77,12 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <div>
 <p class="kicker">Mixing</p>
 <h2>FX III: a third send effect</h2>
-<p>FX III turns Aux 5 into a third send, so a reverb, a delay and something stranger can all run at once.</p>
+<p>The OP-XY gives you two send effects. FX III turns Aux 5 into a third, so a reverb, a delay and something stranger can all run at once.</p>
 <ul>
-<li>Set Aux 5's Input to <em>send</em>; every track's aux send feeds it.</li>
-<li>Shift + Aux 5's key picks any send effect in the build, with its own page and Shift row.</li>
+<li>Turn Aux 5's Input to its top detent, <em>send</em>, and every track's aux send feeds it.</li>
+<li>Shift + Aux 5's key picks the effect: any of stock's send effects, or any in the build, Earthshine and Earthgrain included.</li>
+<li>It gets the effect's own page, all eight controls and its Shift row, just as FX I and FX II do. Press encoder 1 to bypass it.</li>
+<li>Aux 5's Level and Mix set the return, and everything is saved with the project.</li>
 </ul>
 <p class="links">Source: <a href="https://github.com/codebrulee/open-xy/tree/build/2026.11.18">codebrulee/open-xy</a></p>
 </div>
@@ -90,10 +92,12 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <div>
 <p class="kicker">Performance <span class="badge">experimental</span></p>
 <h2>Performance recorder</h2>
-<p>Play your project live and keep the take as a song.</p>
+<p>Play your project live and keep the take. The recorder turns a performance into a song you can play back, edit and build on.</p>
 <ul>
-<li>Hold Record, press Arrange, then Play. Scene changes, mutes and punch-ins are written as you go.</li>
-<li>Press Arrange again on the song page to overdub; Shift + Stop undoes a take.</li>
+<li>Hold Record and press Arrange, then press Play.</li>
+<li>Switch scenes, mute and unmute tracks and play punch-in effects: it writes them all into a new song as you go.</li>
+<li>From the song page, press Arrange again to overdub a song you've already recorded.</li>
+<li>Didn't like it? Shift + Stop on the arranger or song page undoes the last take.</li>
 </ul>
 <p class="links">Source: <a href="https://github.com/codebrulee/opxy-performance-recorder">codebrulee/opxy-performance-recorder</a></p>
 </div>
@@ -103,10 +107,11 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <div>
 <p class="kicker">Confidence</p>
 <h2>CPU meter and warning</h2>
-<p>When the audio clicks, find out which track caused it.</p>
+<p>Machines are hungry, and a click in the audio rarely says which one caused it. This build tells you.</p>
 <ul>
-<li>Project &gt; M4 &gt; cpu shows the load, its peak and what caused it.</li>
-<li>On a dropout, a red cpu chip names the culprit: track 1–8, Aux 5, tape, FX I, FX II or master.</li>
+<li><strong>Project &gt; M4 &gt; cpu</strong> shows how hard the DSP is working, its peak, and which part caused the slowest moment.</li>
+<li>When audio actually drops, a red cpu chip appears where a muted track's M would be, naming the culprit: track 1–8, Aux 5, tape, FX I, FX II or master. So you know what to lighten without opening a menu.</li>
+<li>A slow moment that still made it in time stays quiet: the warning only shows for real dropouts.</li>
 </ul>
 <p class="links">Source: <a href="https://github.com/codebrulee/open-xy/tree/build/2026.11.18">codebrulee/open-xy</a> · <a href="https://github.com/codebrulee/opxy-cpu-warning">codebrulee/opxy-cpu-warning</a></p>
 </div>
