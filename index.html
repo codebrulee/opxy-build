@@ -31,12 +31,30 @@ tr:last-child td{border-bottom:0}
 .tag{color:var(--muted);font-size:.8rem}
 footer{color:var(--muted);font-size:.85rem;margin-top:3rem;border-top:1px solid var(--line);padding-top:1rem}
 code{font-size:.9em}
+
+.hero{padding:1rem 0 .5rem}
+.hero h1{font-size:2.3rem}
+.feature{display:grid;grid-template-columns:1fr;gap:1.2rem;margin:3rem 0;align-items:center}
+@media (min-width:760px){.feature.img{grid-template-columns:1.05fr 1fr}.feature.img.flip>figure{order:-1}}
+.feature h2{margin:0 0 .2rem;font-size:1.45rem}
+.kicker{color:var(--accent);font-weight:600;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;margin:0}
+.feature p{margin:.5rem 0}
+.feature ul{margin:.5rem 0}
+figure{margin:0}
+figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:#000}
+figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.grid4 figcaption{margin:.2rem 0 0}
+.badge{display:inline-block;font-size:.72rem;font-weight:600;border:1px solid var(--warn-line);background:var(--warn-bg);border-radius:99px;padding:.05rem .5rem;margin-left:.4rem;vertical-align:middle;text-transform:none;letter-spacing:0;color:var(--fg)}
+.links{font-size:.88rem;color:var(--muted)}
+.steps li{margin:.45rem 0}
 </style>
 </head>
 <body>
 <main>
+<section class="hero">
 <h1>Codebrulee's Open-XY build</h1>
-<p class="lede">A personal build of <a href="https://github.com/etcetc000/open-xy">Open-XY</a> for the OP-XY: the machines I use, plus features I've written and offered to Open-XY.</p>
+<p class="lede">More sends, a performance recorder, a CPU meter that tells you who's to blame, and two new effects for your OP-XY. A personal build of <a href="https://github.com/etcetc000/open-xy">Open-XY</a>, with features I've written and offered back to it.</p>
 
 <div class="notice">
 <p><strong>Testing - use at your own risk.</strong></p>
@@ -45,18 +63,99 @@ code{font-size:.9em}
 </div>
 
 <a class="open" href="opxy-builder.html">Open the builder</a>
+</section>
 
-<h2>What's different from Open-XY</h2>
+<section class="feature">
+<div>
+<p class="kicker">Mixing</p>
+<h2>FX III: a third send effect</h2>
+<p>The OP-XY gives you two send effects. FX III turns Aux 5 into a third, so a reverb, a delay and something stranger can all run at once.</p>
 <ul>
-<li><strong><a href="https://github.com/codebrulee/open-xy/commit/0c45513c">FX III</a></strong>: a third send effect on Aux 5, with <a href="https://github.com/codebrulee/open-xy/commit/49484ed2">its own controls and shift row</a>.</li>
-<li><strong><a href="https://github.com/codebrulee/opxy-performance-recorder">Performance recorder</a></strong>: records a performance into the song, with punch-ins, overdub and the Record + Arrange arm. Built on new extension events: <a href="https://github.com/codebrulee/open-xy/commit/0d864417">scene boundaries</a>, <a href="https://github.com/codebrulee/open-xy/commit/34ebbae6">scene select and arrangement actions</a>, <a href="https://github.com/codebrulee/open-xy/commit/b28db751">track mute</a>, <a href="https://github.com/codebrulee/open-xy/commit/f325ee2f">punch-ins</a>.</li>
-<li><strong><a href="https://github.com/codebrulee/open-xy/commit/de39af9c">CPU meter</a> and <a href="https://github.com/codebrulee/opxy-cpu-warning">warning</a></strong>: Project &gt; M4 &gt; cpu shows the DSP load, and when audio drops a red cpu chip names the heaviest part (track 1–8, Aux 5, tape, FX I, FX II or master).</li>
-<li><strong><a href="https://github.com/codebrulee/xyphemera">Xyphemera effects</a></strong>: <a href="https://github.com/codebrulee/xyphemera/tree/main/earthshine">Earthshine</a> (shimmer reverb) and <a href="https://github.com/codebrulee/xyphemera/tree/main/earthgrain">Earthgrain</a> (granular looper).</li>
+<li>Turn Aux 5's Input to its top detent, <em>send</em>, and every track's aux send feeds it.</li>
+<li>Shift + Aux 5's key picks the effect: any of stock's send effects, or any in the build, Earthshine and Earthgrain included.</li>
+<li>It gets the effect's own page, all eight controls and its Shift row, just as FX I and FX II do. Press encoder 1 to bypass it.</li>
+<li>Aux 5's Level and Mix set the return, and everything is saved with the project.</li>
 </ul>
-<p>Built from <a href="https://github.com/codebrulee/open-xy/tree/build/2026.11.18">codebrulee/open-xy@build/2026.11.18</a>, which is Open-XY staging (SDK 1.16, 2026-11-15) with <a href="https://github.com/codebrulee/open-xy/compare/ba943a869911...build/2026.11.18">these changes</a> on top. I'd like them to land in Open-XY itself; where a pull request exists it's linked from the source branch.</p>
+<p class="links">Source: <a href="https://github.com/codebrulee/open-xy/commit/0c45513c">the send</a> · <a href="https://github.com/codebrulee/open-xy/commit/49484ed2">its own controls and Shift row</a></p>
+</div>
+</section>
+
+<section class="feature">
+<div>
+<p class="kicker">Performance <span class="badge">experimental</span></p>
+<h2>Performance recorder</h2>
+<p>Play your project live and keep the take. The recorder turns a performance into a song you can play back, edit and build on.</p>
+<ul>
+<li>Hold Record and press Arrange, then press Play.</li>
+<li>Switch scenes, mute and unmute tracks and play punch-in effects: it writes them all into a new song as you go.</li>
+<li>From the song page, press Arrange again to overdub a song you've already recorded.</li>
+<li>Didn't like it? Shift + Stop on the arranger or song page undoes the last take.</li>
+</ul>
+<p class="links">Source: <a href="https://github.com/codebrulee/opxy-performance-recorder">the recorder</a> · the extension events it's built on: <a href="https://github.com/codebrulee/open-xy/commit/0d864417">scene boundaries</a>, <a href="https://github.com/codebrulee/open-xy/commit/34ebbae6">scene select and arrangement actions</a>, <a href="https://github.com/codebrulee/open-xy/commit/b28db751">track mute</a>, <a href="https://github.com/codebrulee/open-xy/commit/c42c75d6">overdub</a>, <a href="https://github.com/codebrulee/open-xy/commit/f325ee2f">punch-ins</a></p>
+</div>
+</section>
+
+<section class="feature">
+<div>
+<p class="kicker">Confidence</p>
+<h2>CPU meter and warning</h2>
+<p>Machines are hungry, and a click in the audio rarely says which one caused it. This build tells you.</p>
+<ul>
+<li><strong>Project &gt; M4 &gt; cpu</strong> shows how hard the DSP is working, its peak, and which part caused the slowest moment.</li>
+<li>When audio actually drops, a red cpu chip appears where a muted track's M would be, naming the culprit: track 1–8, Aux 5, tape, FX I, FX II or master. So you know what to lighten without opening a menu.</li>
+<li>A slow moment that still made it in time stays quiet: the warning only shows for real dropouts.</li>
+</ul>
+<p class="links">Source: <a href="https://github.com/codebrulee/open-xy/commit/de39af9c">the meter</a> · <a href="https://github.com/codebrulee/open-xy/commit/0dbf21f8">naming the slowest part</a> · <a href="https://github.com/codebrulee/opxy-cpu-warning">the warning</a></p>
+</div>
+</section>
+
+<section class="feature img">
+<div>
+<p class="kicker">Effect · Xyphemera</p>
+<h2>Earthshine</h2>
+<p>A shimmer reverb: a warm, wide tank whose tail is pitch-shifted back into itself. Turn <strong>Light</strong> from the moon to the sun, from a sub-octave bloom under your notes to an octave climbing above them, or to a halo that rises or falls for ever.</p>
+<ul>
+<li>Decay from 1 to 20 seconds, Tone from dark to bright, and Shimmer for how much of either layer.</li>
+<li>On Shift: hold the shimmer back, swell it in after each note, and choose the intervals.</li>
+<li>The screen is the Earth with the light turning across it.</li>
+</ul>
+<p class="links">Source: <a href="https://github.com/codebrulee/xyphemera/tree/main/earthshine">Earthshine</a> in the <a href="https://github.com/codebrulee/xyphemera">Xyphemera</a> pack</p>
+</div>
+<figure><img src="images/earthshine.png" alt="Earthshine's screen: the Earth inside a dial from the moon to the sun" width="960" height="440"><figcaption>Earthshine at its defaults.</figcaption></figure>
+</section>
+
+<section class="feature img flip">
+<div>
+<p class="kicker">Effect · Xyphemera</p>
+<h2>Earthgrain</h2>
+<p>A granular looper that listens. It records what you play and plays it back as grains, and when you stop it holds your last phrase as a drone. Play again and the drone lets go.</p>
+<ul>
+<li><strong>Weather</strong> scatters grains like a cloud, <strong>Satellite</strong> slows the sound without changing its pitch, <strong>Orbit</strong> spreads and gathers its grains like a spring, and <strong>Plates</strong> cuts your phrase at each note and plays the pieces back.</li>
+<li>Pitch sets from unison to fifths, octaves, reverse and harmonics; Repeats to let the loop evolve; Space to put it in a room.</li>
+<li>Lock it to the song's tempo, and choose how long a held phrase lasts.</li>
+</ul>
+<p class="links">Source: <a href="https://github.com/codebrulee/xyphemera/tree/main/earthgrain">Earthgrain</a> in the <a href="https://github.com/codebrulee/xyphemera">Xyphemera</a> pack</p>
+</div>
+<figure>
+<div class="grid4">
+<div><img src="images/earthgrain-weather.png" alt="Earthgrain's Weather screen" width="960" height="440"><figcaption>Weather</figcaption></div>
+<div><img src="images/earthgrain-satellite.png" alt="Earthgrain's Satellite screen" width="960" height="440"><figcaption>Satellite</figcaption></div>
+<div><img src="images/earthgrain-orbit.png" alt="Earthgrain's Orbit screen" width="960" height="440"><figcaption>Orbit</figcaption></div>
+<div><img src="images/earthgrain-plates.png" alt="Earthgrain's Plates screen" width="960" height="440"><figcaption>Plates</figcaption></div>
+</div>
+</figure>
+</section>
+
+<h2>Getting it on your OP-XY</h2>
+<ol class="steps">
+<li>Back up your projects.</li>
+<li>Copy <code>os.ldr</code> (OS 1.2.1) off your OP-XY in file-transfer mode.</li>
+<li><a href="opxy-builder.html">Open the builder</a>, choose your machines and build. It patches your own <code>os.ldr</code> in the browser and walks you through installing it.</li>
+<li>To go back, install the stock OS update from Teenage Engineering.</li>
+</ol>
 
 <h2>Machines and extensions</h2>
-<p>Every machine belongs to its author and is used under its licence. The versions are the ones pinned in Open-XY's catalog.</p>
+<p>Alongside the features above, the builder offers 44 machines and extensions from the Open-XY community. Every one belongs to its author and is used under its licence, at the version pinned in Open-XY's catalog.</p>
 <div class="wrap"><table>
 <thead><tr><th>Machine</th><th>Kind</th><th>Author</th><th>Source</th><th>Licence</th></tr></thead>
 <tbody>
