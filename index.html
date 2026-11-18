@@ -6,9 +6,9 @@
 <title>Codebrulee's Open-XY build</title>
 <meta name="description" content="A personal Open-XY build for the OP-XY, with features proposed to Open-XY.">
 <style>
-:root{--bg:#f6f5f2;--fg:#1d1d1b;--muted:#6b6a65;--line:#dcdad3;--card:#fff;--accent:#c2410c;--warn-bg:#fff4e5;--warn-line:#f0b46a}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#151514;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;--card:#1e1e1c;--accent:#fb923c;--warn-bg:#2a1f12;--warn-line:#7a4b16}}
-:root[data-theme=dark]{--bg:#151514;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;--card:#1e1e1c;--accent:#fb923c;--warn-bg:#2a1f12;--warn-line:#7a4b16}
+:root{--band:#e9eef1;--bg:#f6f5f2;--fg:#1d1d1b;--muted:#6b6a65;--line:#dcdad3;--card:#fff;--accent:#c2410c;--warn-bg:#fff4e5;--warn-line:#f0b46a}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--band:#1a2024;--bg:#151514;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;--card:#1e1e1c;--accent:#fb923c;--warn-bg:#2a1f12;--warn-line:#7a4b16}}
+:root[data-theme=dark]{--band:#1a2024;--bg:#151514;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;--card:#1e1e1c;--accent:#fb923c;--warn-bg:#2a1f12;--warn-line:#7a4b16}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:52rem;margin:0 auto;padding:2.5rem 16px 4rem}
@@ -34,7 +34,9 @@ code{font-size:.9em}
 
 .hero{padding:1rem 0 .5rem}
 .hero h1{font-size:2.3rem}
-.feature{display:grid;grid-template-columns:1fr;gap:1.2rem;margin:3rem 0;align-items:center}
+.feature{display:grid;grid-template-columns:1fr;gap:1.2rem;margin:0;padding:2.6rem 0;align-items:center}
+.feature:nth-of-type(even){background:var(--band);box-shadow:0 0 0 100vmax var(--band);clip-path:inset(0 -100vmax)}
+.features-end{height:2rem}
 @media (min-width:760px){.feature.img{grid-template-columns:1.05fr 1fr}.feature.img.flip>figure{order:-1}}
 .feature h2{margin:0 0 .2rem;font-size:1.45rem}
 .kicker{color:var(--accent);font-weight:600;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;margin:0}
