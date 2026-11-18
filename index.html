@@ -29,6 +29,9 @@ table{border-collapse:collapse;width:100%;font-size:.9rem}
 th,td{text-align:left;padding:.45rem .7rem;border-bottom:1px solid var(--line);white-space:nowrap}
 th{color:var(--muted);font-weight:600}
 tr:last-child td{border-bottom:0}
+details.credits{margin:1rem 0}
+details.credits summary{cursor:pointer;font-weight:600;color:var(--accent);padding:.4rem 0}
+details.credits[open] summary{margin-bottom:.6rem}
 .tag{color:var(--muted);font-size:.8rem}
 footer{color:var(--muted);font-size:.85rem;margin-top:3rem;border-top:1px solid var(--line);padding-top:1rem}
 code{font-size:.9em}
@@ -157,7 +160,9 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 </ol>
 
 <h2>Machines and extensions</h2>
-<p>Alongside the features above, the builder offers 44 machines and extensions from the Open-XY community. Every one belongs to its author and is used under its licence, at the version pinned in Open-XY's catalog.</p>
+<p>Alongside the features above, the builder offers machines and extensions from across the Open-XY community. Every one belongs to its author and is used under its licence, at the version pinned in Open-XY's catalog.</p>
+<details class="credits">
+<summary>Show all 48 machines and extensions</summary>
 <div class="wrap"><table>
 <thead><tr><th>Machine</th><th>Kind</th><th>Author</th><th>Source</th><th>Licence</th></tr></thead>
 <tbody>
@@ -210,6 +215,7 @@ figcaption{color:var(--muted);font-size:.8rem;margin-top:.4rem}
 <tr><td>wander</td><td>synth</td><td>Colors In Space</td><td><a href="https://github.com/colorsinspace1/wander">colorsinspace1/wander</a> <span class="tag">1.0</span></td><td>MIT</td></tr>
 <tr><td>wane</td><td>synth</td><td>Max Mockett</td><td><a href="https://github.com/mmockett/OP-XY-Hexagon">mmockett/OP-XY-Hexagon</a> <span class="tag">v1.8.0</span></td><td>MIT</td></tr>
 </tbody></table></div>
+</details>
 
 <footer>
 <p>Open-XY is MIT licensed, © Open-XY contributors. OP-XY is a product of Teenage Engineering; this project is not affiliated with or endorsed by Teenage Engineering.</p>
